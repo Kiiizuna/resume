@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-sprite</title>
+	<style>
+		div {
+			border: 2px blue solid;
+			width: 500px;
+			margin: 0 auto;
+		}
+		.tree,
+		.red-bag{
+			display: inline-block;
+			border: 1px red solid;
+			/*margin-left: 5px;
+			margin-top: 5px;*/
+			width: 20px;
+			height: 20px;
+			background:url(css_sprites.png) no-repeat;
+			background-size:auto 20px;
+		}
+		.tree {
+			background-position: -20px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>树<span class="tree"></span></li>
+			<li>红包<span class="red-bag"></span></li>
+		</ul>
+	</div>
+</body>
+</html>
