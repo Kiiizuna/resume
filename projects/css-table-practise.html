@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+	<style>
+		div {
+			width: 600px;
+			margin: 0 auto;
+		}
+		.class-table-1 th {
+            color: #fff;
+            background-color: rgb(76,175,80);
+            padding: 8px 8px;
+            font-weight: bold;
+        }
+         .class-table-1 {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+            margin-top: 30px;
+        }
+        .class-table-1 tr {
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+		.class-table-1 td {
+            padding: 8px 8px;
+        }
+		.class-table-1 tr:nth-child(even) {
+			background-color: rgb(241,241,241);
+		}
+		/*change color*/
+		.class-table-2 th{
+			background-color: white;
+			color: black;
+		}
+		.class-table-2{
+			border: 0; 
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<table class="class-table-1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Points</th>
+		</tr>
+		<tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		</tr>
+		<tr>
+			<td>Adam</td>
+			<td>Johnson</td>
+			<td>67</td>
+		</tr>
+		<tr>
+			<td>Bo</td>
+			<td>Nilsson</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>Mike</td>
+			<td>Ross</td>
+			<td>35</td>
+		</tr>
+
+	</table>
+	</div>
+	<div>
+		<table class="class-table-1 class-table-2">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Points</th>
+		</tr>
+		<tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		</tr>
+		<tr>
+			<td>Adam</td>
+			<td>Johnson</td>
+			<td>67</td>
+		</tr>
+		<tr>
+			<td>Bo</td>
+			<td>Nilsson</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>Mike</td>
+			<td>Ross</td>
+			<td>35</td>
+		</tr>
+
+	</table>
+	</div>
+</body>
+</html>
