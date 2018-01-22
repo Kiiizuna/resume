@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-navbar</title>
+	<style>
+		.navbar {
+			width: 600px;
+			margin: 0 auto;
+			background-color: rgb(241,241,241);
+			height: 40px;
+			padding: 0;
+			box-shadow: 0 0 2px .2px;
+		}
+		.navbar:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.navbar>li { 
+			list-style: none;
+			display: inline-block;
+			float: left;
+			text-decoration: none;
+			width: 60px;
+			position: relative;
+		}
+		.navbar a {
+			text-decoration: none;
+			color: black;
+			display: block;
+			padding: 10px 10px;
+			text-align: center;
+		}
+		.navbar li:hover {
+			background-color: rgb(175, 175, 175);
+		}
+		.navbar .more { 
+			list-style: none;
+			padding: 0px;
+			background-color: rgb(255,255,255);
+			position: absolute;
+			display: none;
+			width: 160%;
+			box-shadow: 0 0 2px .2px;
+			
+
+		}
+		.navbar>li:hover .more{
+			display: block;
+
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="navbar">
+		<li><a href="#">首页</a></li>
+		<li><a href="#">作品</a></li>
+		<li><a href="#">更多</a>
+			<ul class="more">
+				<li><a href="#">Github</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Zhihu</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
