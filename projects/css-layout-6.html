@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-layout-6</title>
+	<style>
+		.container {
+			width: 500px;
+			height: 500px;
+			border: 2px red solid;
+			text-align: center;
+		}
+		.container::before {
+			content: "";
+			line-height: 500px;
+			vertical-align: middle;
+		}
+		.pic {
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="pic" src="css_sprites.png" alt="">
+	</div>
+</body>
+</html>
