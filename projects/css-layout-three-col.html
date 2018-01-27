@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-layout-three-col</title>
+</head>
+<body>
+	<style>
+		html,body {
+			
+			height: 100%;
+		}
+		.container {
+			width: auto;
+			height: 100%;
+/*			background-color: red;
+*/		}
+		.container::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.aside {
+			float: right;
+			width: 200px;
+			height: 500px;
+			background-color: blue;
+		}
+		.aside-2 {
+			float: left;
+			width: 200px;
+			height: 500px;
+			background-color: red;
+		}
+		.main {
+			margin-right: 210px;
+			margin-left: 210px;
+			height: 100%;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="aside"></div>
+		<div class="aside-2"></div>
+		<div class="main"></div>
+
+	</div>
+</body>
+</html>
