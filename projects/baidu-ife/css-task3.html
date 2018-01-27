@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-task3</title>
+	<style>
+		.container::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.aside {
+			float: left;
+			width: 200px;
+		}
+		.logos {
+			float: right;
+		}
+		.id-div-teamlogo {
+			width: 80px;
+			height: 80px;
+			background-color: #eee;
+			border: 1px red solid;
+		}
+		.container {
+			background-color: #eee;
+			border: solid 1px red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="aside">1
+			<div id="id-div-teamlogo">
+				<img src="#" alt="teamlogo">
+			</div>
+		</div>
+		<div class="main">2</div>
+		<div class="logos">3</div>
+	</div>
+</body>
+</html>

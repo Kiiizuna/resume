@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-layout-two-col</title>
+	<style>
+		html,body {
+			
+			height: 100%;
+		}
+		.container {
+			width: auto;
+			height: 100%;
+/*			background-color: red;
+*/		}
+		.container::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.aside {
+			float: right;
+			width: 200px;
+			height: 100%;
+			background-color: blue;
+		}
+		.main {
+			margin-right: 210px;
+			height: 500px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="aside"></div>
+		<div class="main"></div>
+	</div>
+</body>
+</html>
