@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show cylinders</title>
+	<style type="text/css">
+		p {
+			color: rgb(1,132,127);
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<select name="unit" id="unit">
+			<option value="A401">A401</option>
+			<option value="A402">A402</option>
+			<option value="B966">B966</option>
+		</select>
+		<select name="mast" id="mast">
+			<option value="2LFL">2LFL</option>
+			<option value="2FFL">2FFL</option>
+			<option value="3FFL">3FFL</option>
+		</select>
+		<select name="height" id="height">
+			<option value="3.0M">3.0M</option>
+			<option value="3.3M">3.3M</option>
+			<option value="3.5M">3.5M</option>
+			<option value="3.7M">3.7M</option>
+			<option value="3.8M">3.8M</option>
+			<option value="4.0M">4.0M</option>
+			<option value="4.1M">4.1M</option>
+			<option value="4.3M">4.3M</option>
+			<option value="4.5M">4.5M</option>
+			<option value="5.0M">5.0M</option>
+			<option value="5.1M">5.1M</option>
+			<option value="5.4M">5.4M</option>
+			<option value="5.6M">5.6M</option>
+			<option value="6.0M">6.0M</option>
+		</select>
+		<input type="button" name="" onclick="getValue()"  value="点我查油缸哟">
+		<div id="div1"></div>
+		<p class="para"></p>
+		
+		<script type="text/javascript">
+			// your own log function
+			var log = function() {
+    			console.log.apply(console, arguments)
+				}
+				
+			var a,b,c
+			var getValue = function () {
+				var myselect = document.getElementById("unit")
+				var index = myselect.selectedIndex
+				a = myselect.options[index].value
+
+				var myselect2 = document.getElementById("mast")
+				var index2 = myselect2.selectedIndex
+				b = myselect2.options[index2].value
+
+				var myselect3 = document.getElementById("height")
+				var index3 = myselect3.selectedIndex
+				c = myselect3.options[index3].value
+				log(a,b,c)
+			
+			
+			
+			var cylinders = [
+			{"unit":"A401","mast":"2FFL","height":"3.0M","AFT":"8820251","BB":"2319441","num":"1pcs"},
+{"unit":"A401","mast":"3FFL","height":"4.3M","AFT":"8820251","BB":"2319441","num":"1pcs"},
+{"unit":"A401","mast":"2FFL","height":"3.5M","AFT":"8820253","BB":"2319443","num":"1pcs"},
+{"unit":"A401","mast":"3FFL","height":"5.1M","AFT":"8820253","BB":"2319443","num":"1pcs"},
+{"unit":"A401","mast":"2FFL","height":"3.7M","AFT":"8820254","BB":"2319444","num":"1pcs"},
+{"unit":"A401","mast":"3FFL","height":"5.4M","AFT":"8820254","BB":"2319444","num":"1pcs"},
+{"unit":"A401","mast":"2FFL","height":"4.1M","AFT":"8820255","BB":"2319445","num":"1pcs"},
+{"unit":"A401","mast":"3FFL","height":"6.0M","AFT":"8820255","BB":"2319445","num":"1pcs"},
+{"unit":"A401","mast":"3FFL","height":"4.5M","AFT":"8820252","BB":"2319446","num":"1pcs"},
+
+{"unit":"A402","mast":"2FFL","height":"3.0M","AFT":"8820250","BB":"2319381","num":"1pcs"},
+{"unit":"A402","mast":"2FFL","height":"3.3M","AFT":"8820194","BB":"2319384","num":"1pcs"},
+{"unit":"A402","mast":"3FFL","height":"5.0M","AFT":"8820194","BB":"2319384","num":"1pcs"},
+{"unit":"A402","mast":"2FFL","height":"3.8M","AFT":"8820195","BB":"2319386","num":"1pcs"},
+{"unit":"A402","mast":"3FFL","height":"5.6M","AFT":"8820195","BB":"2319386","num":"1pcs"},
+{"unit":"A402","mast":"2FFL","height":"4.1M","AFT":"8820196","BB":"2319387","num":"1pcs"},
+{"unit":"A402","mast":"3FFL","height":"6.0M","AFT":"8820196","BB":"2319387","num":"1pcs"},
+{"unit":"A402","mast":"3FFL","height":"4.5M","AFT":"8820193","BB":"2319390","num":"1pcs"},
+
+{"unit":"B966","mast":"2FFL","height":"3.0M","AFT":"8822481","BB":"1622532","num":"1pcs"},
+{"unit":"B966","mast":"3FFL","height":"4.5M","AFT":"8822481","BB":"1622532","num":"1pcs"},
+{"unit":"B966","mast":"2FFL","height":"3.5M","AFT":"8822483","BB":"1622534","num":"1pcs"},
+{"unit":"B966","mast":"3FFL","height":"5.0M","AFT":"8822483","BB":"1622534","num":"1pcs"},
+{"unit":"B966","mast":"3FFL","height":"6.0M","AFT":"8822484","BB":"1622538","num":"1pcs"},
+
+
+{"unit":"A401","mast":"2LFL","height":"3.0M","AFT":"8820087","BB":"2319413","num":"2pcs"},
+{"unit":"A401","mast":"2LFL","height":"3.7M","AFT":"8820088","BB":"2319416","num":"2pcs"},
+{"unit":"A401","mast":"2LFL","height":"4.0M","AFT":"8820089","BB":"2319417","num":"2pcs"},
+{"unit":"A401","mast":"2LFL","height":"5.0M","AFT":"8820090","BB":"2319420","num":"2pcs"},
+
+{"unit":"A401","mast":"3FFL","height":"3.0M","AFT":"8820091","BB":"2319424","num":"2pcs"},
+
+{"unit":"A401","mast":"3FFL","height":"4.5M","AFT":"8820092","BB":"2319433","num":"2pcs"},
+{"unit":"A401","mast":"3FFL","height":"5.1M","AFT":"8820095","BB":"2319435","num":"2pcs"},
+{"unit":"A401","mast":"3FFL","height":"5.4M","AFT":"8820094","BB":"2319436","num":"2pcs"},
+{"unit":"A401","mast":"3FFL","height":"6.0M","AFT":"8820093","BB":"2319437","num":"2pcs"},
+
+{"unit":"A402","mast":"2LFL","height":"3.0M","AFT":"8820081","BB":"2319353","num":"2pcs"},
+
+{"unit":"A402","mast":"2LFL","height":"3.3M","AFT":"8820082","BB":"2319354","num":"2pcs"},
+{"unit":"A402","mast":"2LFL","height":"3.7M","AFT":"8820083","BB":"2319356","num":"2pcs"},
+{"unit":"A402","mast":"3LFL","height":"4.0M","AFT":"8820084","BB":"2319357","num":"2pcs"},
+{"unit":"A402","mast":"2LFL","height":"4.5M","AFT":"8820085","BB":"2319359","num":"2pcs"},
+{"unit":"A402","mast":"3LFL","height":"5.0M","AFT":"8820086","BB":"2319361","num":"2pcs"},
+
+{"unit":"A402","mast":"2FFL","height":"3.0M","AFT":"8820140","BB":"2319365","num":"2pcs"},
+
+{"unit":"A402","mast":"3FFL","height":"4.5M","AFT":"8820141","BB":"2319375","num":"2pcs"},
+{"unit":"A402","mast":"3FFL","height":"5.0M","AFT":"8820142","BB":"2319376","num":"2pcs"},
+{"unit":"A402","mast":"3FFL","height":"5.6M","AFT":"8820143","BB":"2319378","num":"2pcs"},
+{"unit":"A402","mast":"3FFL","height":"6.0M","AFT":"8820144","BB":"2319379","num":"2pcs"},
+{"unit":"B966","mast":"3FFL","height":"4.5M","AFT":"8822478","BB":"1622523","num":"2pcs"},
+{"unit":"B966","mast":"3FFL","height":"5.0M","AFT":"8822479","BB":"1622524","num":"2pcs"},
+{"unit":"B966","mast":"3FFL","height":"6.0M","AFT":"8822480","BB":"1622527","num":"2pcs"},
+{"unit":"B966","mast":"2FFL","height":"3.0M","AFT":"8822392","BB":"1622543","num":"2pcs"},
+
+{"unit":"B966","mast":"2LFL","height":"3.0M","AFT":"8822394","BB":"1622511","num":"2pcs"},
+{"unit":"B966","mast":"2LFL","height":"3.5M","AFT":"8822395","BB":"1622513","num":"2pcs"},
+{"unit":"B966","mast":"2LFL","height":"4.0M","AFT":"8822396","BB":"1622515","num":"2pcs"},
+{"unit":"B966","mast":"2LFL","height":"4.5M","AFT":"8822397","BB":"1622517","num":"2pcs"},
+{"unit":"B966","mast":"2LFL","height":"5.0M","AFT":"8822398","BB":"1622518","num":"2pcs"}
+			]
+				
+				for (var i = 0; i < cylinders.length; i++) {
+						var cyl = []
+					 if (cylinders[i].unit == a && cylinders[i].mast == b && cylinders[i].height == c) {
+					 	cyl.push(cylinders[i])
+					 	// log(cylinders[i])
+					 	log(cyl)
+					 	var s = JSON.stringify(cyl)
+					 	log(s)
+					 	var para = document.createElement("p")
+						var node = document.createTextNode(s)
+						para.appendChild(node)
+						var element = document.getElementById("div1")
+						element.appendChild(para)
+						alert(s)
+						
+					 } 
+				}
+				
+
+
+			}
+				
+		</script>
+	</form>
+</body>
+</html>
