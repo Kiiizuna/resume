@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>keig7-lmxi</title>
+	<style>
+		.gua-hide {
+			display: none;
+		}
+		.slider {
+			background-color: lightblue;
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
+		.slider-image {
+			display: none;
+		}
+		.slider-active {
+			display: inline-block;
+		}
+		#btn {
+			position: absolute;
+			right: 0px;
+			height: 100%;
+			background: transparent;
+    		border: none;
+		}
+	</style>
+</head>
+<body>
+	<a id='id-a-click' href="#">link</a>
+	<div class='warning gua-hide'>It's very dangerous here do not click!!!</div>
+	
+	<div class='slider'>	
+		<img class='slider-image slider-active' src="1.jpg" alt="">
+		<img class='slider-image' src="2.jpg" alt="">
+		<img class='slider-image' src="3.jpg" alt="">
+		<button id='btn'>&gt</button>
+
+	</div>
+
+	<script>
+		var a = document.querySelector('#id-a-click')
+		a.addEventListener('mouseover', function(){
+			var warning = document.querySelector('.warning')
+			warning.classList.remove('gua-hide')
+		})
+		a.addEventListener('mouseout', function(){
+			var warning = document.querySelector('.warning')
+			warning.classList.add('gua-hide')
+		})
+
+		//轮播图开始了
+		var index = 0
+		var numberOfImages = 3
+		var next = function() {
+			index = (index + 1) % numberOfImages
+			var active = document.querySelector('.slider-active')
+			active.classList.remove('slider-active')
+			var slider = document.querySelectorAll('.slider-image')[index]
+			slider.classList.add('slider-active')
+		}
+		// 把event函数绑定在btn上
+		var btn = document.querySelector('#btn')
+		btn.addEventListener('click', function(){
+			next()
+		})
+		// setInterval(next, 1000)
+
+	</script>
+</body>
+</html>
