@@ -95,7 +95,7 @@
             }
         })  
 
-          //尝试----在鼠标点击任何地点失去焦点并同样保存
+          //自己尝试!!----在鼠标点击任何地点失去焦点并同样保存
           //这里要注意blur不冒泡而focusout可以
                 main.addEventListener('focusout', function(event){
                 log("触发的事件是", event)
@@ -103,24 +103,29 @@
                 log('target是', target) //target 是??
                 // var d = document.activeElement.tagName
                 // log("有焦点的是", )
+                if (target.classList.contains("done")) {
+                    log("失去焦点的事件是button触发的!!!")
+                }else{
                     var index = indexOfElement(target.parentElement)
                     log("index for revisesd span is ", index)
                     todoList[index].task = target.innerHTML 
                 //开始写的是todoList[index].inputValue.task
                     log("点了其他地方了(失去焦点了)")
                     saveTodoList()  //第??处 修改后保存
-                
+                }     
         })  
 
                 // 对于done 以及del button的点击事件
         main.addEventListener('click', function(event){
         	log("main click", event)
         	var target = event.target
+            // target.blur()
         	log('target是', target) //target 是button 
         	if (target.classList.contains('done')) {
         		var todoDiv = target.parentElement
         		toggleClass(todoDiv, 'finish') // finish是完成后的class的样式(划线)
         		log('span', target.parentElement)
+                //有问题===点击完成按钮后自动blur() 防止后续focusout事件的影响
         	}else if(target.classList.contains('del')){
         		var todoDiv = target.parentElement
         		var index = indexOfElement(target.parentElement)
