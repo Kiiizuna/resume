@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-event-1</title>
+	<style>
+		.outer,
+		.middle,
+		.inner {
+			border: 1px red solid;
+			padding: 10px;
+
+		}
+	</style>
+</head>
+<body>
+	<!-- <button class="btn">click me</button> -->
+	<div class="outer">outer
+		<div class="middle">
+			middle
+			<div class="inner">inner</div>
+		</div>
+	</div>
+	<script>
+		var inner = document.querySelector('.inner')
+		var middle = document.querySelector('.middle')
+		var outer = document.querySelector('.outer')
+		// var btn = document.querySelector('.btn')
+		inner.addEventListener('click', function(){
+			console.log("inner clicked")
+			
+		})
+			middle.addEventListener('click', function(event){
+			console.log("middle clicked")
+			event.stopPropagation()
+
+		})
+
+			outer.addEventListener('click', function(){
+			console.log("outer clicked")
+		})
+
+		
+
+	</script>
+</body>
+</html>
