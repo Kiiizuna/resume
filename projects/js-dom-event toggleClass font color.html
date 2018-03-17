@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event toggleClass font color</title>
+	<style type="">
+		.container {
+			height: 100px;
+			
+			border: 1px solid;
+
+		}
+		
+		.active {
+			color:white;
+			background: black;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="normal">I'm font</h1>
+	</div>
+	<button id="add">add</button>
+	<button id="remove">remove</button>
+	<button id="tog">toggle</button>
+	<script type="text/javascript">
+		var controller = function() {
+				var addbtn = document.querySelector("#add")
+			var removebtn = document.querySelector("#remove")
+			var togbtn = document.querySelector("#tog")
+			var container = document.querySelector(".container")
+			addbtn.addEventListener("click", function(event){
+				container.classList.add("active")
+			})
+			removebtn.addEventListener("click", function(event){
+				container.classList.remove("active")
+			})
+			togbtn.addEventListener("click", function(event){
+				toggleClass(container, "active")
+			})
+		}
+		
+
+
+		var toggleClass = function(element, classname) {
+			if (element.classList.contains(classname)) {
+				element.classList.remove(classname)
+			}else{
+				element.classList.add(classname)
+			}
+		}
+
+		var __main = function() {
+			controller()
+		}
+		__main()
+
+	</script>
+</body>
+</html>
