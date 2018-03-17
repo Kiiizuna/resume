@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-dom-2</title>
+</head>
+<body>
+	 <ul class="ct">
+	  <li>这里是</li>
+	  <li>饥人谷</li>
+	  <li>任务班</li>
+	</ul>
+	<input class="ipt-add-content" placeholder="添加内容"/>
+	<button id="btn-add-start">开头添加</button>
+	<button id="btn-add-end">结尾添加</button>
+
+	<script>
+	var log = function() {
+			console.log.apply(console, arguments)
+		}
+
+		var list = document.querySelector(".ct")
+		list.addEventListener("click", function(event){
+				var target = event.target
+				var text = target.innerHTML
+				console.log("现在您点击到的是", text)
+			})
+		
+		var addStart = document.querySelector("#btn-add-start")
+		log("content is ", )
+		var addEnd = document.querySelector("#btn-add-end")
+			addStart.addEventListener("click", function(){
+				var input = document.querySelector(".ipt-add-content")
+				var contents = input.value
+				var newContent = document.createTextNode(contents)
+				list.insertBefore(newContent, list.firstChild)
+			})
+			//在后面插入
+		addEnd.addEventListener("click", function(){
+				var input = document.querySelector(".ipt-add-content")
+				var contents = input.value
+				var newContent = document.createTextNode(contents)
+				list.appendChild(newContent)
+			})
+	//你的代码
+	</script>
+</body>
+</html>
