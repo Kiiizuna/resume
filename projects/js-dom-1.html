@@ -4,19 +4,26 @@
 	<meta charset="UTF-8">
 	<title>js-dom-1</title>
 	<style>
+		.ct li,
+		.img-preview li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 		.img-preview {
-			background: lightblue;
-			border: 1px green solid;
+			/*background: lightblue;*/
+			/*border: 2px green solid;*/
 			height: 220px
 			width:90px;
 		}
-		img {
-			position: absolute;
+		.img-preview li {
+			
+			display: none;
 		}
-
-		.theTop {
-			  z-index = 1
+		.img-preview li.active {
+			display: block;
 		}
+		
 	</style>
 </head>
 <body>
@@ -26,27 +33,43 @@
 	    <li data-img="3.png">鼠标放置查看图片3</li>
 	</ul>
 	<div class="img-preview">
-	  <img id="img-1" src="https://i0.hdslb.com/bfs/sycp/creative_img/201803/a8cd5a07d7f25a11d875518a48ef4024.jpg" alt="">
-	  <img id="img-2" src="https://i0.hdslb.com/bfs/archive/2c9f4cdacf871ea4cb81f53eaa4f35c84d72aaaa.jpg" alt="">
-	  <img id="img-3" src="https://i0.hdslb.com/bfs/archive/8aa3ae27f94ffdca8375af594ca2b505091cf601.jpg" alt="">
+	  <li><img id="img-1" src="https://i0.hdslb.com/bfs/sycp/creative_img/201803/a8cd5a07d7f25a11d875518a48ef4024.jpg" alt=""></li>
+	  <li><img id="img-2" src="https://i0.hdslb.com/bfs/archive/2c9f4cdacf871ea4cb81f53eaa4f35c84d72aaaa.jpg" alt=""></li>
+	  <li class="active"><img id="img-3" src="https://i0.hdslb.com/bfs/archive/8aa3ae27f94ffdca8375af594ca2b505091cf601.jpg" alt=""></li>
 	</div>
 	<script>
+
+	var log = function() {
+			console.log.apply(console, arguments)
+		}
+
 		var ul = document.querySelector(".ct")
-		ul.addEventListener("click",function(event){
+		var cts =  document.querySelectorAll(".ct>li")
+		var imgs = document.querySelectorAll(".img-preview>li")
+		log("imgs", imgs)
+		log("cts", cts)
+		ul.addEventListener("mouseover",function(event){
 		  var target = event.target
-		  if (target.contains("theTop")){
-		    toggle(target, "theTop")
-		  } 
+		  var index = Array.prototype.indexOf.call(cts, target)
+		  log(index)
+		  log(imgs[index])
+		  // imgs.classList.remove("active")
+		imgs.forEach(function(node){
+        node.classList.remove('active')
+        })
+		  imgs[index].classList.add("active")
 		})
+
+
 		//toggle function
 
-		var toggle = function(element, classname) {
-			if (element.classList.contains(classname)){
-		      element.classlist.remove(classname)
-		    }else{
-		    element.classList.add(classname)
-		  }
-		}
+		// var toggle = function(element, classname) {
+		// 	if (element.classList.contains(classname)){
+		//       element.classlist.remove(classname)
+		//     }else{
+		//     element.classList.add(classname)
+		//   }
+		// }
 		  
 		
 	</script>
