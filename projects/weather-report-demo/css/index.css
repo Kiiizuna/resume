@@ -104,7 +104,7 @@ section .detail .future {
 }
 
 section .detail .today .temp {
-	font-size: 40px;
+	font-size: 30px;
 	display: block;
 	text-align: center;
 }
@@ -115,8 +115,16 @@ section .detail .today .date {
 	padding:0 5px;
 }
 
+.detail .weather-pic img {
+	height: 80px;
+	width: 80px;
+}
 
-
+/*.future .weather-pic img {
+	height: 60px;
+	width: 60px;
+}
+*/
 
 
 

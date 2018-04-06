@@ -1,6 +1,7 @@
 // console.log("hello world")
 
 var http = require("http")
+
 http.createServer(function(req, res) {
 	console.log(req)
 	res.end("hello world!!") // 响应的内容
