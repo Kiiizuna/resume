@@ -60,24 +60,31 @@ var getData = function() {
 		var futureImgs = document.querySelectorAll(".future .weather-pic img")
 		var futureTemp = document.querySelectorAll(".future .temp")
 		for (var i = 0; i < futureDate.length; i++) {
-			futureDate[i].innerText = response.weather[0].future[i + 1].date
+			futureDate[i].innerText = response.weather[0].future[i + 1].day
 			futureImgs[i].src = `http://weixin.jirengu.com/images/weather/code/${response.weather[0].future[i + 1].code1}.png`
-			futureTemp[i].innerText = response.weather[0].future[i + 1].high + " / " + response.weather[0].future[i + 1].low
+			futureTemp[i].innerText = response.weather[0].future[i + 1].high + " / " + response.weather[0].future[i + 1].low + " °C"
 		}
 		// tab 切换效果实现
 		var tabsParent = document.querySelector(".suggestion .tabs")
 		var tabsList = document.querySelectorAll(".suggestion .tabs>li")
+
 		tabsParent.addEventListener("click", function(event) {
 			var target = event.target
+			var index = indexOfElement(target) //找到tab的index用自己定义函数
 			log("target is", target)
 			for (var i = 0; i < tabsList.length; i++) {
-				tabsList[i].classList.remove("active")
+				tabsList[i].classList.remove("active")// del all active
+				log("panels is", panels)
+				log("index", index)
+				panels[i].classList.remove("active") // del all active
+				panels[index].classList.add("active")
+
 			}
 			target.classList.add("active")
 		// 和panels bind在一起
+			
+			
 
-			var index = indexOfElement(target)
-			log("index", index)
 		})
 
 

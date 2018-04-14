@@ -58,6 +58,7 @@ section .suggestion {
 section .suggestion .tabs>li {
 	float: left;
 	padding: 10px 15px;
+	cursor: pointer;
 }
 
 section .suggestion .tabs>li .iconfont {
@@ -83,6 +84,7 @@ section .suggestion .panels>li {
 section .suggestion .panels>li.active {
 	display: block;
 }
+/* detail start*/
 
 section .detail {
 	display: flex;
@@ -93,6 +95,7 @@ section .detail .today {
 	height: 100px;
 	width: 200px;
 	display: flex;
+	text-align: center;
 }
 
 section .detail .today>div {
@@ -101,18 +104,22 @@ section .detail .today>div {
 
 section .detail .future {
 	flex: 1;
+	text-align: center;
+
 }
 
 section .detail .today .temp {
-	font-size: 30px;
+	font-size: 38px;
 	display: block;
 	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 section .detail .today .date {
 	background-color: rgba(0,0,0,0.2);
-	border-radius: 5px;
-	padding:0 5px;
+	border-radius: 10px;
+	padding:5px 5px;
 }
 
 .detail .weather-pic img {
@@ -120,12 +127,23 @@ section .detail .today .date {
 	width: 80px;
 }
 
-/*.future .weather-pic img {
-	height: 60px;
-	width: 60px;
+.detail .weather-pic {
+	display: block;
 }
-*/
 
+.future .weather-pic {
+	display: block;
+	
+}
 
+section .detail .future .week {
+	display: block;
+	margin-top: 4px;
+}
+
+section .detail .future .temp {
+	display: block;
+	margin-bottom: 5px;
+}
 
 
