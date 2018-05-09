@@ -1,7 +1,7 @@
-# resume
+# late bloomer
 
 ## learn git pull
 
-### my resume
+### my late starter
 
 build capacity
